@@ -1,9 +1,4 @@
-:root{
-    --error-color: #dc3545;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-    
-}
+
 
 *{
     margin: 0;
@@ -46,7 +41,7 @@ form{
     font-weight: 600;
 
 }
-.block-form .block-form__form-group .form-control{
+.block-form .block-form__form-group input{
     height: 41px;
     border: 1px solid #b2b7bc;
     border-radius: 4px;
@@ -69,15 +64,20 @@ form{
 
 
 .block-form__form-group.error input {
-    border-color: var(--error-color);
+    border-color: #ff3860;
 }
 
-.block-form__form-group.success input {
-    border-color: var(--success-color);
+.block-form__form-group.success input{
+    border-color: #09c372;
+}
+
+.block-form__form-group.error div{
+    color: #ff3860;
+    font-size: 10px;
+  
+
 }
 
 
-.block-form__form-group small {
-    color: var(--error-color);
-}
+
 

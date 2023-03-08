@@ -28,11 +28,12 @@ const setError = (element, message) =>{
 const setSuccess = element =>{
     const inputControl = element.parentElement;
     console.log(inputControl);
-    const errorDisplay = inputControl.querySelector('.success'); 
-    errorDisplay.innerText = ""; 
+    const errorDisplay = inputControl.querySelector('.error');
+    console.log(errorDisplay);
 
+    errorDisplay.innerText = '';
     inputControl.classList.add('success');
-    inputControl.classList.remove('error')
+    inputControl.classList.remove('error');
 };
 
 
@@ -52,7 +53,7 @@ const validateInputs = ()=>{
    const passwordConfirmed = confirmPassword.value.trim();
 
    if(fullnameValue === ''){
-    setError(fullname, 'Fullname không đúng yêu cầu');
+    setError(fullname, 'Fullname không được để rỗng');
    }
    else{
     setSuccess(fullname)
@@ -74,7 +75,7 @@ const validateInputs = ()=>{
    if(passwordValue === ''){
     setError(password, 'Password không được để rỗng');  
    }
-   else if(passwordValue.lenght()<8){
+   else if(passwordValue.lenght<8){
     setError(password, 'Password tối thiểu ít nhất 8 ký tự ');
 
    }
@@ -83,7 +84,7 @@ const validateInputs = ()=>{
    }
 
    if(passwordConfirmed ===''){
-    setError(password, 'Please enter confirm your password  ');  
+    setError(confirmPassword, 'Please enter confirm your password  ');  
 
    }
    else if(passwordValue  !== password ){
